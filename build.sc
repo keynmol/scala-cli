@@ -440,6 +440,7 @@ trait Core extends ScalaCliCrossSbtModule
          |  def scalajsEnvJsdomNodejsVersion = "${Deps.scalaJsEnvJsdomNodejs.dep.version}"
          |  def scalaNativeVersion04 = "${Deps.Versions.scalaNative04}"
          |  def scalaNativeVersion = "${Deps.Versions.scalaNative}"
+         |  def scalaNativeCliVersion = "${Deps.Versions.scalaNative}"
          |
          |  def testRunnerOrganization = "$testRunnerOrganization"
          |  def testRunnerModuleName = "${`test-runner`(Scala.runnerScala3).artifactName()}"
@@ -855,6 +856,7 @@ trait Cli extends CrossSbtModule with ProtoBuildModule with CliLaunchers
          |  def scalaJsVersion = "${Scala.scalaJs}"
          |  def scalaJsCliVersion = "${Scala.scalaJsCli}"
          |  def scalaNativeVersion = "${Deps.nativeTools.dep.version}"
+         |  def scalaNativeCliVersion = "${Deps.nativeTools.dep.version}"
          |  def ammoniteVersion = "${Deps.Versions.ammonite}"
          |  def ammoniteVersionForScala3Lts = "${Deps.Versions.ammoniteForScala3Lts}"
          |  def defaultScalafmtVersion = "${Deps.scalafmtCli.dep.version}"

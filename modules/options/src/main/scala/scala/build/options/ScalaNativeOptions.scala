@@ -126,6 +126,12 @@ final case class ScalaNativeOptions(
   private def multithreadingCliOption(): List[String] =
     multithreading.toList.flatMap(m => List("--multithreading", m.toString))
 
+
+  private def debugInfoCliOption(): List[String] =
+    // multithreading.toList.flatMap(m => List("--multithreading", m.toString))
+    List("-g")
+
+
   def platformSuffix: String =
     "native" + ScalaVersion.nativeBinary(finalVersion).getOrElse(finalVersion)
 
@@ -179,7 +185,8 @@ final case class ScalaNativeOptions(
       compileCliOptions() ++
       resourcesCliOptions(resourcesExist) ++
       targetCliOption() ++
-      multithreadingCliOption()
+      multithreadingCliOption() ++ 
+      debugInfoCliOption()
 
 }
 

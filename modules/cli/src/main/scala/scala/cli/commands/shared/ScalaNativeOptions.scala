@@ -75,8 +75,14 @@ final case class ScalaNativeOptions(
   @Group(HelpGroup.ScalaNative.toString)
   @HelpMessage("Enable/disable Scala Native multithreading support")
   @Tag(tags.should)
-    nativeMultithreading: Option[Boolean] = None
+    nativeMultithreading: Option[Boolean] = None,
 
+  @Group(HelpGroup.ScalaNative.toString)
+  @HelpMessage(s"Scala Native CLI version to use for linking (${Constants.scalaNativeCliVersion} by default).")
+  @ValueDescription("version")
+  @Tag(tags.implementation)
+  @Hidden
+    nativeCliVersion: Option[String] = None,
 )
 // format: on
 
